@@ -6,6 +6,8 @@ int main(){
     LinkedList list;
     list.addBack(15);
     list.addBack(16);
+    list.addBack(2343);
+    list.remove(16);
     list.printList();
     return 0;
 }
