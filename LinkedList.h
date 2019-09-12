@@ -6,7 +6,7 @@ class LinkedList {
         LinkedList();
         ~LinkedList();
         void addBack(int value);
-        void remove(int value);
+        bool remove(int value);
         void printList();
         int search(int value);
 

@@ -1,11 +1,13 @@
 #include "LinkedList.h"
 
 LinkedList::LinkedList(){
-
+    m_size = 0;
+    m_front = nullptr;
 }
 
 LinkedList::~LinkedList(){
-
+    m_front = nullptr;
+    m_size = 0;
 }
 
 void LinkedList::addBack(int value){
@@ -25,35 +27,41 @@ void LinkedList::addBack(int value){
     }
 }
 
-void LinkedList::remove(int value){
+bool LinkedList::remove(int value){
     Node* temp = m_front;
-    Node* prev = m_front;
     for(int i = 0; i < m_size; i++){
         if(temp->getValue() == value){
             if(i == 0){
+                std::cout << "got here" << "\n";
                 m_front = m_front->getNext();
                 delete temp;
                 m_size--;
+                return true;
             }
             else if(i == m_size - 1){
+                Node* prev = m_front;
                 for(int j = 0; j < i-1; j++){
                     prev = prev->getNext();
                 }
                 prev->setNext(nullptr);
                 delete temp;
                 m_size--;
+                return true;
             }
             else{
+                Node* prev = m_front;
                 for(int j = 0; j < i-1; j++){
                     prev = prev->getNext();
                 }
                 prev->setNext(temp->getNext());
                 delete temp;
                 m_size--;
+                return true;
             }
         }
         temp = temp->getNext();
     }
+    return false;
     
 }
 

@@ -7,7 +7,7 @@ int main(){
     list.addBack(15);
     list.addBack(16);
     list.addBack(2343);
-    list.remove(16);
+    list.remove(2343);
     list.printList();
     return 0;
 }
