@@ -1,13 +1,8 @@
-#include <iostream>
-#include "LinkedList.h"
+#include "Driver.h"
 
 int main(){
-    std::cout << "hello World!\n";
-    LinkedList list;
-    list.addBack(15);
-    list.addBack(16);
-    list.addBack(2343);
-    list.remove(2343);
-    list.printList();
+    Driver * myDriver = new Driver;
+    myDriver->run();
+    delete myDriver;
     return 0;
 }

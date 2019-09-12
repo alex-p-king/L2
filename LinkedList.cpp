@@ -10,13 +10,14 @@ LinkedList::~LinkedList(){
     m_size = 0;
 }
 
-void LinkedList::addBack(int value){
+bool LinkedList::addBack(int value){
     Node* temp = new Node(value); 
     Node* i = m_front;
     if(m_size == 0){
         m_front = temp;
         m_front->setNext(nullptr);
         m_size++;
+        return true;
     }
     else{
         while(i->getNext() != nullptr){
@@ -24,7 +25,9 @@ void LinkedList::addBack(int value){
         }
         i->setNext(temp);
         m_size++;
+        return true;
     }
+    return false;
 }
 
 bool LinkedList::remove(int value){
@@ -83,16 +86,16 @@ void LinkedList::printList(){
 
 }
 
-int LinkedList::search(int value){
+bool LinkedList::search(int value){
     Node* temp = m_front;
     for(int i = 0; i < m_size; i++){
         if(temp->getValue() == value){
-            std::cout << "Found it at position: " << i << "\n";
-            return i;
+            //std::cout << "Found it at position: " << i << "\n";
+            return true;
         }
         temp = temp->getNext();
     }
-    return -1;
+    return false;
 }
 
 Node* LinkedList::getFront(){
