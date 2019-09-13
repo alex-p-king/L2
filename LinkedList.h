@@ -5,11 +5,11 @@ class LinkedList {
     public:
         LinkedList();
         ~LinkedList();
-        bool addBack(int value);
+        bool addBack(std::string value);
 
-        bool remove(int value);
+        bool remove(std::string value);
         void printList();
-        bool search(int value);
+        bool search(std::string value);
 
         Node* getFront();
         int getSize();

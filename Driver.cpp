@@ -10,7 +10,7 @@ Driver::Driver(){
         count++;
     }
     infile.close();
-    std::cout << count << "\n";
+    std::cout << "adding " << count << " words to Hash table\n";
 }
 
 Driver::~Driver(){

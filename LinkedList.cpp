@@ -10,7 +10,7 @@ LinkedList::~LinkedList(){
     m_size = 0;
 }
 
-bool LinkedList::addBack(int value){
+bool LinkedList::addBack(std::string value){
     Node* temp = new Node(value); 
     Node* i = m_front;
     if(m_size == 0){
@@ -30,7 +30,7 @@ bool LinkedList::addBack(int value){
     return false;
 }
 
-bool LinkedList::remove(int value){
+bool LinkedList::remove(std::string value){
     Node* temp = m_front;
     for(int i = 0; i < m_size; i++){
         if(temp->getValue() == value){
@@ -86,7 +86,7 @@ void LinkedList::printList(){
 
 }
 
-bool LinkedList::search(int value){
+bool LinkedList::search(std::string value){
     Node* temp = m_front;
     for(int i = 0; i < m_size; i++){
         if(temp->getValue() == value){

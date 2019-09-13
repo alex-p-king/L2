@@ -4,14 +4,14 @@
 class Node{
     public:
         Node();
-        Node(int value);
+        Node(std::string value);
         ~Node();
         Node* getNext();
         void setNext(Node* next);
-        int getValue() const;
-        void setValue(int value);
+        std::string getValue() const;
+        void setValue(std::string value);
         void printNode();
     private:
         Node* m_next = nullptr;
-        int m_value = 0;
+        std::string m_value = "";
 };

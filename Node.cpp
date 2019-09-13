@@ -1,11 +1,11 @@
 #include "Node.h"
 
 Node::Node(){
-    m_value = 0;
+    m_value = "";
     m_next = nullptr;
 }
 
-Node::Node(int value){
+Node::Node(std::string value){
     m_value = value;
     m_next = nullptr;
 }
@@ -22,11 +22,11 @@ void Node::setNext(Node* next){
     m_next = next;
 }
 
-int Node::getValue()const{
+std::string Node::getValue()const{
     return m_value;
 }
 
-void Node::setValue(int value){
+void Node::setValue(std::string value){
     m_value = value;
 }
 
