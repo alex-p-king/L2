@@ -7,6 +7,7 @@ HashTable::HashTable(int n){
 
 HashTable::~HashTable(){
     m_bucketSize = 0;
+    delete this;
 }
 
 bool HashTable::insert(std::string word){
@@ -19,7 +20,7 @@ bool HashTable::deleteTable(){
     return true;
 }
 
-std::string HashTable::find(){
+std::string HashTable::find(std::string word){
     return "abc";
 }
 
@@ -28,6 +29,10 @@ void HashTable::print(){
 }
 
 int HashTable::hash(std::string word){
-    std::cout << "Hashing -> " << word << " \n";
-    return 1;
+    int value = 0;
+    for(char c : word){
+       value += static_cast<int>(c);
+    }
+    std::cout << "the value of word '" << word << "' is " << value << std::endl;
+    return value;
 }
