@@ -3,10 +3,14 @@
 Driver::Driver(){
     int count;
     std::ifstream infile;
-    infile.open("data.txt");
+    std::string word;
+    infile.open("Data.txt");
     while(!infile.eof()){
-
+        infile >> word;
+        count++;
     }
+    infile.close();
+    std::cout << count << "\n";
 }
 
 Driver::~Driver(){
