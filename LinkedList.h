@@ -6,7 +6,7 @@ class LinkedList {
         LinkedList();
         ~LinkedList();
         bool addBack(std::string value);
-
+        bool addFront(std::string value);
         bool remove(std::string value);
         void printList();
         bool search(std::string value);

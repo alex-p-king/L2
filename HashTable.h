@@ -5,7 +5,7 @@ class HashTable{
     public:
         HashTable(int n);
         ~HashTable();
-        bool insert();
+        bool insert(std::string word);
         bool deleteTable();
         std::string find();
         void print();

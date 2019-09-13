@@ -11,6 +11,12 @@ Driver::Driver(){
     }
     infile.close();
     std::cout << "adding " << count << " words to Hash table\n";
+    m_table = new HashTable(count);
+    infile.open("Data.txt");
+    while(!infile.eof()){
+        infile >> word;
+        m_table->insert(word);
+    }
 }
 
 Driver::~Driver(){

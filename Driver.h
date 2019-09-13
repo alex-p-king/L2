@@ -16,5 +16,5 @@ class Driver{
         void print();
         void test();
     private:
-        HashTable m_table(int n);
+        HashTable * m_table;
 };

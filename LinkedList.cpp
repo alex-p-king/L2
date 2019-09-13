@@ -30,6 +30,21 @@ bool LinkedList::addBack(std::string value){
     return false;
 }
 
+bool LinkedList::addFront(std::string value){
+    if(m_size == 0){
+        m_front = new Node(value);
+        m_size++;
+        return true;
+    }
+    else{
+    Node* temp = new Node(value);
+    temp->setNext(m_front);
+    m_front = temp;
+    m_size++;
+    }
+    return false;
+}
+
 bool LinkedList::remove(std::string value){
     Node* temp = m_front;
     for(int i = 0; i < m_size; i++){
