@@ -16,7 +16,8 @@ bool HashTable::insert(std::string word){
 }
 
 bool HashTable::remove(std::string word){
-    return m_list->remove(word);
+    int index = hash(word);
+    return m_list[index].remove(word);
 }
 
 bool HashTable::find(std::string word){
