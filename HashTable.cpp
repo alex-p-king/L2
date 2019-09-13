@@ -11,6 +11,7 @@ HashTable::~HashTable(){
 
 bool HashTable::insert(std::string word){
     std::cout << "inserting " << word << " \n";
+    hash(word);
     return true;
 }
 
@@ -24,4 +25,9 @@ std::string HashTable::find(){
 
 void HashTable::print(){
     std::cout << "Print function called" << std::endl;
+}
+
+int HashTable::hash(std::string word){
+    std::cout << "Hashing -> " << word << " \n";
+    return 1;
 }

@@ -9,6 +9,7 @@ class HashTable{
         bool deleteTable();
         std::string find();
         void print();
+        int hash(std::string word);
 
     private:
         int m_bucketSize;
