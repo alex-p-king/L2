@@ -37,10 +37,11 @@ bool LinkedList::addFront(std::string value){
         return true;
     }
     else{
-    Node* temp = new Node(value);
-    temp->setNext(m_front);
-    m_front = temp;
-    m_size++;
+        Node* temp = new Node(value);
+        temp->setNext(m_front);
+        m_front = temp;
+        m_size++;
+        return true;
     }
     return false;
 }
@@ -86,12 +87,12 @@ bool LinkedList::remove(std::string value){
 void LinkedList::printList(){
     Node* temp = m_front;
     if(m_size == 0){
-        std::cout << "List is empty \n";
+        std::cout << "List is empty";
     }
     else {
         while(temp->getNext() != nullptr){
         temp->printNode();
-        std::cout << " "; 
+        std::cout << " -> "; 
         temp = temp->getNext();
         }
         temp->printNode();

@@ -2,18 +2,17 @@
 
 HashTable::HashTable(int n){
     int m = ceil(n / 0.75);
-    m_table = new LinkedList[m];
+    m_list = new LinkedList[m];
     m_bucketSize = m;
 }
 
 HashTable::~HashTable(){
     m_bucketSize = 0;
-    delete this;
 }
 
 bool HashTable::insert(std::string word){
-    std::cout << "inserting " << word << " \n";
-    hash(word);
+    int index = hash(word);
+    m_list[index].addFront(word);
     return true;
 }
 
@@ -26,7 +25,11 @@ std::string HashTable::find(std::string word){
 }
 
 void HashTable::print(){
-    std::cout << "Print function called" << std::endl;
+    for(int i = 0 ; i < m_bucketSize; i++){
+        std::cout << i << ": -> ";
+        m_list[i].printList();
+        std::cout << std::endl;
+    }
 }
 
 int HashTable::hash(std::string word){
@@ -34,6 +37,10 @@ int HashTable::hash(std::string word){
     for(char c : word){
        value += static_cast<int>(c);
     }
-    std::cout << "Hashing " << word << " in bucket " << m_bucketSize << std::endl;
+    value = floor(value % m_bucketSize);
     return (value);
+}
+
+LinkedList* HashTable::getTable(){
+    return m_list;
 }

@@ -20,7 +20,7 @@ Driver::Driver(){
 }
 
 Driver::~Driver(){
-
+    delete m_table;
 }
 
 void Driver::run(){
@@ -50,7 +50,7 @@ void Driver::run(){
 }
 
 void Driver::menu(){
-    std::cout << "1: Insert\n" << "2: Delete\n" << "3: Find\n" << "4: Print\n" << "5: Exit\n\nPlease choose an option: "; 
+    std::cout << "\n1: Insert\n" << "2: Delete\n" << "3: Find\n" << "4: Print\n" << "5: Exit\n\nPlease choose an option: "; 
 }
 
 bool Driver::insert(){
@@ -70,7 +70,7 @@ std::string Driver::find(){
 }
 
 void Driver::print(){
-    std::cout << "You chose: Print table method \n\n";
+    m_table->print();
 }
 
 void Driver::test(){

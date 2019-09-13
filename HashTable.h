@@ -11,9 +11,10 @@ class HashTable{
         std::string find(std::string word);
         void print();
         int hash(std::string word);
+        LinkedList* getTable();
 
     private:
         int m_bucketSize;
-        LinkedList* m_table;
+        LinkedList* m_list;
 
 };
