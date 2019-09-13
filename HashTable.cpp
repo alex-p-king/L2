@@ -16,7 +16,7 @@ bool HashTable::insert(std::string word){
     return true;
 }
 
-bool HashTable::deleteTable(){
+bool HashTable::remove(std::string word){
     return true;
 }
 

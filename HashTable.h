@@ -7,7 +7,7 @@ class HashTable{
         HashTable(int n);
         ~HashTable();
         bool insert(std::string word);
-        bool deleteTable();
+        bool remove(std::string word);
         std::string find(std::string word);
         void print();
         int hash(std::string word);
