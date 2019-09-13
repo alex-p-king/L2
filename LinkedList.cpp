@@ -31,9 +31,7 @@ bool LinkedList::addBack(std::string value){
 }
 
 bool LinkedList::addFront(std::string value){
-    Node* temp = m_front;
     if(search(value)){
-        std::cout << "***WARNING*** cannot add duplicate value to list\n";
         return false;
     }
     if(m_size == 0){

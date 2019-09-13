@@ -1,7 +1,7 @@
 #include "Driver.h"
 
 Driver::Driver(){
-    int count;
+    int count = 0;
     std::ifstream infile;
     std::string word;
     infile.open("Data.txt");
@@ -17,6 +17,7 @@ Driver::Driver(){
         infile >> word;
         m_table->insert(word);
     }
+    infile.close();
 }
 
 Driver::~Driver(){
@@ -53,14 +54,28 @@ void Driver::menu(){
     std::cout << "\n1: Insert\n" << "2: Delete\n" << "3: Find\n" << "4: Print\n" << "5: Exit\n\nPlease choose an option: "; 
 }
 
-bool Driver::insert(){
-    std::cout << "You chose: insert method \n\n";
-    return false;
+void Driver::insert(){
+    std::string word;
+    std::cout << "Enter a word to be inserted: ";
+    std::cin >> word;
+    if(m_table->insert(word)){
+        std::cout << "***SUCCESS***:: '" << word << "' inserted into hash table\n";
+    }    
+    else{
+        std::cout << "***FAILURE***:: '" << word << "' not inserted into hash table\n";
+    }
 }
 
-bool Driver::deleteTable(){
-    std::cout << "You chose: delete method \n\n";
-    return true;
+void Driver::deleteTable(){
+    std::string word;
+    std::cout <<"please enter a word to remove: ";
+    std::cin >> word;
+    if(m_table->remove(word)){
+        std::cout << "***SUCCESS***:: '" << word << "' removed from hash table\n";
+    }
+    else{
+        std::cout << "***FAILURE***:: '" << word << "' could not be removed from hash table\n";
+    }
 }
 
 void Driver::find(){

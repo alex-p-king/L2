@@ -12,12 +12,11 @@ HashTable::~HashTable(){
 
 bool HashTable::insert(std::string word){
     int index = hash(word);
-    m_list[index].addFront(word);
-    return true;
+    return m_list[index].addFront(word);
 }
 
 bool HashTable::remove(std::string word){
-    return true;
+    return m_list->remove(word);
 }
 
 bool HashTable::find(std::string word){

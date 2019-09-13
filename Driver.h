@@ -10,8 +10,8 @@ class Driver{
         ~Driver();
         void run();
         void menu();
-        bool insert();
-        bool deleteTable();
+        void insert();
+        void deleteTable();
         void find();
         void print();
         void test();
