@@ -8,7 +8,7 @@ class HashTable{
         ~HashTable();
         bool insert(std::string word);
         bool remove(std::string word);
-        std::string find(std::string word);
+        bool find(std::string word);
         void print();
         int hash(std::string word);
         LinkedList* getTable();

@@ -63,10 +63,16 @@ bool Driver::deleteTable(){
     return true;
 }
 
-std::string Driver::find(){
-    std::cout << "You chose: find method \n\n";
-    std::string s;
-    return s;
+void Driver::find(){
+    std::string word;
+    std::cout << "Enter a word to search for: ";
+    std::cin >> word;
+    if(m_table->find(word)){
+        std::cout << "***SUCCESS***:: found '" << word << "'\n";
+    }
+    else{
+        std::cout << "***FAILURE***:: could not find '" << word << "'\n";
+    }
 }
 
 void Driver::print(){

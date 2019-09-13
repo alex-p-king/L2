@@ -12,7 +12,7 @@ class Driver{
         void menu();
         bool insert();
         bool deleteTable();
-        std::string find();
+        void find();
         void print();
         void test();
     private:

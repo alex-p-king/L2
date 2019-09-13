@@ -20,8 +20,9 @@ bool HashTable::remove(std::string word){
     return true;
 }
 
-std::string HashTable::find(std::string word){
-    return "abc";
+bool HashTable::find(std::string word){
+    int index = hash(word);
+    return m_list[index].search(word);
 }
 
 void HashTable::print(){
