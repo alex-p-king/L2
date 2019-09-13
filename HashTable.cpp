@@ -1,8 +1,9 @@
 #include "HashTable.h"
 
 HashTable::HashTable(int n){
-    int m = (n / 0.78);
-    m_table = new LinkedList[n/m];
+    int m = ceil(n / 0.75);
+    m_table = new LinkedList[m];
+    m_bucketSize = m;
 }
 
 HashTable::~HashTable(){
@@ -33,6 +34,6 @@ int HashTable::hash(std::string word){
     for(char c : word){
        value += static_cast<int>(c);
     }
-    std::cout << "the value of word '" << word << "' is " << value << std::endl;
-    return value;
+    std::cout << "Hashing " << word << " in bucket " << m_bucketSize << std::endl;
+    return (value);
 }
