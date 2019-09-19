@@ -83,7 +83,8 @@ void Driver::find(){
     std::cout << "Enter a word to search for: ";
     std::cin >> word;
     if(m_table->find(word)){
-        std::cout << "***SUCCESS***:: found '" << word << "'\n";
+        int bucket = m_table->hash(word);
+        std::cout << "***SUCCESS***:: found '" << word << "' in bucket " << bucket << std::endl;
     }
     else{
         std::cout << "***FAILURE***:: could not find '" << word << "'\n";
